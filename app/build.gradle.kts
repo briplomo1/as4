@@ -7,7 +7,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.tictactoe_tkq516"
+        applicationId = "a4.tictactoe"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
