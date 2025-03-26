@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.tictactoe_tkq516"
+    namespace = "a4.tictactoe"
     compileSdk = 35
 
     defaultConfig {

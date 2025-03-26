@@ -6,6 +6,7 @@ import java.util.List;
 public class TicTacToeBoard {
     private Marker currentPlayer = Marker.X;
 
+    private Marker firstTurn = Marker.X;
     private int moveCount = 0;
     private Position lastMove;
     private Marker[][] markers;
@@ -95,17 +96,26 @@ public class TicTacToeBoard {
         return count == 3 ? pos.toArray(new Position[0]) : null;
     }
 
+    /**
+     * Returns the number of unplayed squares on the board.
+     * @return The number of unplayed squares
+     * */
     public int numUnplayedSquares() {
         return 9-moveCount;
     }
 
+    /**
+     * Resets the board to a blank state by resetting all buttons markers to null, setting the first turn
+     * to be the player hwo had the second  turn last match, and resetting the move count.
+     * */
     public void resetBoard() {
         for(int i=0;i<3;i++) {
             for(int j=0;j<3;j++) {
                 markers[i][j] = null;
             }
         }
-        this.moveCount = 0;
+        firstTurn = Marker.valueOf(!firstTurn.getValue());
+        moveCount = 0;
         lastMove = null;
     }
 

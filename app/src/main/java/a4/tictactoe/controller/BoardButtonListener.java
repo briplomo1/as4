@@ -3,8 +3,8 @@ package a4.tictactoe.controller;
 import android.view.View;
 
 /**
- * A listener class that updates the app state when a button on the TicTacToe board is clicked.
- *
+ * Class that implements {@link View.OnClickListener} and its {@link #onClick(View)} method.
+ * Handles the event when one of the board buttons is pressed.
  * */
 public class BoardButtonListener implements View.OnClickListener {
 
@@ -20,6 +20,6 @@ public class BoardButtonListener implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        controller.
+        controller.boardButtonSelected(row, col);
     }
 }
