@@ -1,4 +1,4 @@
-package com.example.tictactoe_tkq516.model;
+package a4.tictactoe.model;
 
 public class Position {
     private int row;

@@ -1,4 +1,4 @@
-package com.example.tictactoe_tkq516.controller;
+package a4.tictactoe.controller;
 
 public class TicTacToeController {
     private Bo

@@ -1,8 +1,8 @@
-package com.example.tictactoe_tkq516.view;
+package a4.tictactoe.view;
 
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.tictactoe_tkq516.MainActivity;
+import a4.tictactoe.MainActivity;
 
 public class TicTacToeView {
     private final MainActivity mainActivity;

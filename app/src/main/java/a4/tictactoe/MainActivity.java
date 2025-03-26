@@ -1,4 +1,4 @@
-package com.example.tictactoe_tkq516;
+package a4.tictactoe;
 
 import android.os.Bundle;
 
