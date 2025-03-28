@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 boardButtons[i][j] = b;
             }
         }
+        newGame.setBackgroundColor(Color.BLUE);
 
         // Initialize the model, view, and controller
         TicTacToeBoard board = new TicTacToeBoard();
