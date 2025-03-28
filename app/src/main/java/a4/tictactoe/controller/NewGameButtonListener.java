@@ -1,5 +1,6 @@
 package a4.tictactoe.controller;
 
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -14,6 +15,7 @@ public class NewGameButtonListener implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        Log.i("NewGameButtonListener", "New game button pressed");
         controller.newButtonSelected();
     }
 }

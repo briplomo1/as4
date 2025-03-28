@@ -1,6 +1,7 @@
 package a4.tictactoe.view;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,7 +37,7 @@ public class TicTacToeView {
      * @param col The column of the button
      * @param marker The marker to set the button to
      * */
-    public void setBoardButton(int row, int col, String marker) {
+    public void setBoardButtonText(int row, int col, String marker) {
         boardButtons[row][col].setText(marker);
     }
 
@@ -48,7 +49,8 @@ public class TicTacToeView {
      * @param color The color to set the button to
      * */
     public void setBoardButtonColor(int row, int col, @ColorInt int color) {
-        boardButtons[row][col].setHighlightColor(color);
+        Log.i("View", String.format("Setting color for button %d %d", row, col));
+        boardButtons[row][col].setBackgroundColor(color);
     }
 
     /**
@@ -56,7 +58,7 @@ public class TicTacToeView {
      * @param newScore The new score to set X's score to
      * */
     public void setXScore(int newScore) {
-        XScore.setText(newScore);
+        XScore.setText(String.format("X score: %d", newScore));
     }
 
     /**
@@ -64,7 +66,7 @@ public class TicTacToeView {
      * @param newScore The new score to set O's score to
      * */
     public void setOScore(int newScore) {
-        OScore.setText(newScore);
+        OScore.setText(String.format("O score: %d", newScore));
     }
 
     /**
@@ -72,7 +74,7 @@ public class TicTacToeView {
      * @param newScore The new integer to set draws to
      * */
     public void setDraws(int newScore) {
-        draws.setText(newScore);
+        draws.setText(String.format("Draws: %d", newScore));
     }
 
     /**
@@ -92,19 +94,23 @@ public class TicTacToeView {
         directions.setText(String.format("Player %s wins!", winner));
     }
 
+    public void setGameIsDraw() {
+        Log.i("View", "Set draw");
+        directions.setText("The match is a draw!");
+    }
+
     /**
      * Sets the board model to a blank state.
      * Sets the game's view to a new game by clearing all moves from the board
      * and setting the next player to X.
      * */
     public void resetBoard() {
-        for (TextView[] v: boardButtons) {
-            for (TextView t: v) {
+        for (Button[] v: boardButtons) {
+            for (Button t: v) {
                 t.setText("");
-                t.setHighlightColor(Color.BLUE);
+                t.setBackgroundColor(Color.BLUE);
             }
         }
-        setNextPlayer("X");
     }
 
 

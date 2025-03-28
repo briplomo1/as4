@@ -1,5 +1,6 @@
 package a4.tictactoe.controller;
 
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -20,6 +21,7 @@ public class BoardButtonListener implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Log.i("BoardButtonListener", String.format("Board button row%s col%s pressed%n", row, col));
         controller.boardButtonSelected(row, col);
     }
 }

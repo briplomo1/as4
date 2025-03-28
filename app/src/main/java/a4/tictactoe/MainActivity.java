@@ -1,7 +1,9 @@
 package a4.tictactoe;
 
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("MainActivity", "Creating activity");
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeViews() {
+        System.out.println("Initializing views");
         // Initialize views
         TextView XScore = findViewById(R.id.x_wins);
         TextView OScore = findViewById(R.id.o_wins);
@@ -43,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 int id = res.getIdentifier("button_r" + i + "c" + j, "id", getPackageName());
-                boardButtons[i][j] = findViewById(id);
+                Button b = findViewById(id);
+                b.setBackgroundColor(Color.BLUE);
+                boardButtons[i][j] = b;
             }
         }
 
@@ -60,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         newGame.setOnClickListener(new NewGameButtonListener(controller));
+        controller.startGame();
 
     }
 
